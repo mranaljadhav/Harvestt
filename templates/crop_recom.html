@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        {% include 'base.html' %}
+    <div class="view" style="background-image: url('https://wallpaperaccess.com/full/1598237.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">      
+        <div class ='card-body'>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <h2 style = color:white;font-size:4vw;>Crop Recommendation</h2><br>
+              <form  action = "{% url 'crop_recomm' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="number" class="form-control" name="n" required placeholder="Nitrogen">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="number" class="form-control" name="p" required placeholder="Phosphorous">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="number" class="form-control" name="k" required placeholder="Potassium">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="number" class="form-control" name="temp" required placeholder="Temperature">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="number" class="form-control" name="humidity" required placeholder="humidity">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="number" class="form-control" name="ph" required placeholder="ph">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="number" class="form-control" name="rainfall" required placeholder="rainfall">
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit" name="submit" class="btn btn-success">Predict</button><br><br>
+                  </div>
+                </div>
+              <div>
+                <h2 style = color:white;font-size:3vw;>Recommended suitable crop : {{res}}</h2>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        {% include 'footer.html' %}
+    </body>
+</html>
