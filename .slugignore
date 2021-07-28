@@ -1,0 +1,21 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+*.psd
+*.pdf
+/docs/
+
+/test
+/spec
+./log
+./tmp
+./storage
+./public
+./heroku
+./package-lock.json
+./package-lock.json
