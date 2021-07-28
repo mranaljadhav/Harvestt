@@ -6,13 +6,12 @@ from keras.preprocessing.image import img_to_array, load_img
 import joblib
 import numpy as np
 from django.core.files.storage import default_storage
-from keras.models import load_model
 from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array, load_img
 from keras.models import model_from_json
+import tensorflow as tf
 
-path = "detect_model.h5"
-model = load_model(path)
+model = tf.keras.models.load_model('detect_model.h5')
 # load json and create model
 #json_file = open('Cnn_model.json', 'r')
 #loaded_model_json = json_file.read()
