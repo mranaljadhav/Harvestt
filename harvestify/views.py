@@ -11,7 +11,8 @@ from keras.preprocessing.image import img_to_array, load_img
 from keras.models import model_from_json
 import tensorflow as tf
 
-model = tf.keras.models.load_model('detect_model.h5')
+model = tf.lite.TFLiteConverter.from_keras_model('detect_model.h5')
+#model = tf.keras.models.load_model('detect_model.h5')
 #load json and create model
 #json_file = open('Cnn_model.json', 'r')
 #loaded_model_json = json_file.read()
